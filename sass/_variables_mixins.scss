@@ -1,0 +1,26 @@
+/*Variaveis*/
+$color-main: #ffffff;
+$titles-color: #000000;
+$gray: rgba($titles-color, .25);
+$dark-gray: rgba($titles-color, .50);
+
+/*Mixins*/
+@mixin centrarvh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin paragraph_text {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8em;
+  line-height: 2em;
+}
+
+@mixin titles_text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+}

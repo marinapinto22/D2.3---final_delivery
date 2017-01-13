@@ -1,0 +1,525 @@
+@import "reset";
+@import "variables_mixins";
+
+/*Work Template*/
+/*Page one and two*/
+.pageone, .pagetwo {
+  display: none;
+}
+
+.page_active {
+  background-color: $color-main;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Slideshow*/
+#slider {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  list-style: none;
+}
+
+#slider ul li {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 60vw;/*Importante Media Queries*/
+  height: auto;
+  line-height: 0px;
+}
+
+/* Botões anterior e seguinte */
+a.control_prev, a.control_next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: $titles-color;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  z-index:1;
+  text-decoration: none;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+a.control_next {
+  right: 0;
+}
+/*Fim botões anterior e seguinte */
+
+/*Formataçao imagens*/
+.images {
+  width: 100%;
+}
+/*Fim Slideshow*/
+
+/*Botao More*/
+.botaomore {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0px;
+}
+
+.botaomore img {
+  width: 35px;
+  height: auto;
+}
+/*Fim Botao More*/
+
+/*Page2*/
+/*Botao Less*/
+.botaoless {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0px;
+}
+
+.botaoless img {
+  width: 35px;
+  height: auto;
+}
+/*Fim Botao Less*/
+
+.content {
+  margin: 0 auto;
+}
+
+.content h1 {
+ font-family: 'Open Sans', sans-serif;
+ font-style: italic;
+ font-weight: 400;
+ font-size: 1.5em;
+ line-height: 1.5em;
+ color: $titles-color;
+}
+
+.content span {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: lighten($titles-color,70%);
+  font-size: 0.75em;
+}
+
+.content p {
+  @include paragraph_text;
+  padding-top: 10px;
+}
+/*Fim Page 2*/
+/*Fim Work Template*/
+
+
+/*Formatacao index*/
+.logo {
+  @include centrarvh;
+  height: 80vh;
+}
+
+.logo > img {
+  width: 200px;
+  max-height: auto;
+}
+/*Fim formatacao index*/
+
+/*Formatacao About*/
+.centrar_content {
+  @include centrarvh;
+  height: 80vh;
+  margin: 0 auto;
+  /*flex-direction: column;*/ /*Media Queries Mobile*/
+}
+
+/*Imagem*/
+  .centrar_content > img {
+    width: 200px;
+}
+/*Fim Imagem*/
+.texto {
+  padding: 25px;
+}
+
+.texto>p {
+  @include paragraph_text;
+  padding-top: 10px;
+}
+
+.sites {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  max-width: 250px;
+}
+
+.sites>a {
+  @include titles_text;
+  font-size: 1.5em;
+}
+
+/*Formatacao Links*/
+.sites>a:visited {
+  color: lighten($titles-color,70%);
+  text-decoration: none;
+}
+
+.sites>a:link {
+  color: $titles-color;
+  text-decoration: none;
+}
+
+.sites>a:hover {
+  color: $dark-gray;
+  text-decoration: none;
+}
+/*Fim formatacao about*/
+
+/*Formatacao Contactos*/
+.contacts {
+  @include centrarvh;
+  height: 80vh;
+  /*flex-direction: column;*/ /*Media Queries Mobile*/
+}
+
+.contacts > li > a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 40px;
+}
+
+.contacts img {
+  width: 60px;
+}
+
+.contacts p {
+  @include paragraph_text;
+  padding-top: 10px;
+}
+
+/*Formatacao links*/
+.contacts a:link {
+    opacity: 0.8;
+    text-decoration: none;
+    color: $titles-color;
+  }
+
+.contacts a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.contacts a:visited {
+  text-decoration: none;
+  color: $gray;
+}
+/*Fim formatacao contactos*/
+
+
+/*Formatacao pagina works*/
+.trabalhos {
+  @include centrarvh;
+  height:80vh;
+}
+
+.trabalhos li {
+  max-width: 300px;
+  padding: 20px 40px;
+}
+
+.trabalhos img {
+  margin: 0% 5%;
+  width: 90%;
+  border-bottom: 3px solid $titles-color;
+  transition: margin 0.5s, width 0.5s;
+}
+
+.trabalhos h1 {
+  @include titles_text;
+  color: $titles-color;
+  font-size: 1em;
+  padding-top:10px;
+  text-align: center;
+}
+
+.trabalhos img:hover {
+  margin: 0;
+  width: 100%;
+  transition: margin 0.3s, width 0.3s;
+}
+
+.trabalhos a:visited {
+  text-decoration: none;
+}
+
+.trabalhos a:link {
+  text-decoration: none;
+}
+/*Fim formatacao pagina works*/
+
+
+/*Formatacao nav*/
+nav a {
+  @include titles_text;
+  font-size: 1em;
+}
+
+/*Formatacao Links*/
+nav a:link {
+  color: $titles-color;
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: lighten($titles-color,50%);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+  border-bottom: 3px solid #000000;
+}
+/*Fim Formatacao Links*/
+/*Fim Formatacao nav*/
+
+
+/*Media Queries*/
+/*Vista de smartphone portrait*/
+@media only screen and (max-width:480px) {
+  /*Formatacao Hamburger*/
+    .nav_items {
+      position:absolute;
+      top:50px;
+      left:0px;
+      display: none;
+    }
+
+    .open {
+      display: flex !important;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      background-color: $color-main;
+      opacity: 0.95;
+      width: 100vw;
+      height: 60vh;
+      padding: 10vh 0vh;
+      z-index: 5;
+
+      a {
+        font-size: 20px;
+      }
+    }
+
+    .hamburger .line {
+      width: 40px;
+      height: 5px;
+      background-color: $titles-color;
+      display: block;
+      margin: 8px;
+      transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger:hover {
+      cursor: pointer;
+    }
+
+    #hamburger-1.is-active .line:nth-child(2){ //seleciona linha do meio e esconde-a
+      opacity: 0;
+    }
+
+    #hamburger-1.is-active .line:nth-child(1){ //seleciona primeira linha e roda-a
+      transform: translateY(13px) rotate(45deg);
+    }
+
+    #hamburger-1.is-active .line:nth-child(3){ //seleciona a ultima linha e roda-a
+      transform: translateY(-13px) rotate(-45deg);
+    }
+  /*Fim Formatacao Hamburger*/
+
+  /*Pagina about, contacts, e trabalhos*/
+  .centrar_content, .contacts, .trabalhos  {
+    flex-direction: column;
+  }
+
+  .centrar_content img {
+      width:140px;
+  }
+
+  .trabalhos li {
+    padding: 5px;
+    width: 200px;
+  }
+  /*Fim Pagina about, contacts, e trabalhos*/
+
+  /*Formatacao bloco texto*/
+  .description, .content {
+    width:90vw;
+  }
+  /*Fim Formatacao bloco texto*/
+
+  /*Formatacao slideshow*/
+  #slider ul li {
+    width: 100vw;
+  }
+  /*Fim formatacao slideshow*/
+}
+
+/*Media Queries da Nav para todos os outros dispositivos*/
+@media only screen and (min-width: 481px) and (max-width: 1824px) {
+  /*Formatacao Nav*/
+  nav {
+    width: 100%;
+  }
+
+  ul {
+    @include centrarvh;
+    height: 10vh; //Permite que o conteudo das paginas about, index, works, contacts esteja centrado
+  }
+
+  nav li {
+    padding: 0px 30px;
+  }
+  /*Fim Formatacao Nav*/
+
+  #slider ul li {
+    width: 80vw;/*Importante Media Queries*/
+  }
+}
+/*Fim Media Queries da Nav para todos os outros dispositivos*/
+
+/*Vista de tablet*/
+@media only screen and (min-width: 481px) and (max-width: 650px) {
+  /*Pagina about, contacts, e trabalhos*/
+  .trabalhos, .contacts {
+    flex-direction: column;
+  }
+
+  .contacts li {
+    padding: 15px;
+  }
+
+  .trabalhos li {
+    padding: 5px;
+    width: 200px;
+  }
+  /*Fim Pagina about, contacts, e trabalhos*/
+
+  /*Formatacao bloco texto*/
+  .description, .content {
+    width:60vw;
+  }
+  /*Fim Formatacao bloco texto*/
+  #slider ul li {
+    width: 80vw;
+  }
+}
+
+/*Vista de pequeno computador/ ipad*/
+@media only screen and (min-width: 651px) and (max-width: 773px) {
+  /*Pagina about, contacts, e trabalhos*/
+
+  .trabalhos li {
+    padding: 5px;
+  }
+  /*Fim Pagina about, contacts, e trabalhos*/
+
+  /*Formatacao bloco texto*/
+  .description, .content {
+    width:60vw;
+  }
+  /*Fim Formatacao bloco texto*/
+
+  #slider ul li {
+    width: 80vw;
+  }
+}
+
+/* Vista de iPads (portrait)*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .description, .content {
+      width:60vw;
+    }
+
+    #slider ul li {
+      width: 80vw;
+    }
+}
+
+/* Vista de iPads (landscape)*/
+  @media only screen and (min-device-width: 774px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .description, .content {
+      width: 50vw;
+    }
+
+    #slider ul li {
+      width: 80vw;
+    }
+}
+
+/* Vista do Desktop Medio*/
+@media only screen and (min-width: 1025px) and (max-width: 1290px) {
+    .description, .content {
+      width: 40vw;
+    }
+
+    #slider ul li {
+      width: 80vw;
+    }
+}
+
+/*Vista de Desktops and laptops*/
+@media only screen  and (min-width : 1291px) and (max-width:1823px) {
+  .description, .content {
+    width: 40vw;
+  }
+
+  #slider ul li {
+    width: 60vw;
+  }
+}
+
+/*Vista de Large screens*/
+@media only screen and (min-width: 1824px) {
+  /*Formatacao Nav*/
+  nav {
+    width: 100%;
+  }
+
+  ul {
+    @include centrarvh;
+    height: 10vh; //Permite que o conteudo das paginas about, index, works, contacts esteja centrado
+  }
+
+  nav li {
+    padding: 0px 30px;
+  }
+  /*Fim Formatacao Nav*/
+
+  .description, .content {
+    width: 20vw;
+  }
+
+  #slider ul li {
+    width: 60vw;
+  }
+}
